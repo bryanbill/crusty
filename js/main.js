@@ -2,20 +2,20 @@ const foodStore = [
     {
         name: 'Pizza',
         price: 500,
-        img: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+        img: 'https://media.istockphoto.com/photos/delicious-vegetarian-pizza-on-white-picture-id1192094401?k=20&m=1192094401&s=612x612&w=0&h=jesvXuPyvqM36GQ5QEvJrL3QZjK6YKsziUUF3ZbW0gw=',
         id: 1
     },
     {
         name: 'Burger',
         price: 400,
-        img: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+        img: 'https://media.istockphoto.com/photos/juicy-hamburger-on-white-background-picture-id1206323282?k=20&m=1206323282&s=612x612&w=0&h=yatlq6BHRCCvoTzFZLSwaJc0O8Quct_tRPWtH0dj9Fc=',
         id: 2
 
     },
     {
         name: 'Fries',
         price: 300,
-        img: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
+        img: 'https://s7d1.scene7.com/is/image/mcdonalds/t-fries-basket:1-3-product-tile-desktop?wid=829&hei=515&dpr=off',
         id: 3
     }
 ];
@@ -27,7 +27,8 @@ const buildCard = () => {
         document.getElementById('food-list').innerHTML += `
       <div class="col-md-4 animate">
           <div class="card">
-            <img src="${item.img}" alt="" class="card-img-top img-fluid rotate" />
+           <div class="d-flex justify-content-center">
+           <img src="${item.img}" alt="" height="200" width="200" class="i" /></div>
             <div class="card-body">
               <h5 class="card-title">${item.name}</h5>
               <p class="card-text">
@@ -110,7 +111,7 @@ const priceReducer = (overload) => {
 }
 
 const check = () => {
-    if (finalPrice > 1 ) {
+    if (finalPrice > 1) {
         document.getElementById('delivery-form').classList.remove('visually-hidden');
         finalPrice += 200;
         document.getElementById('totalPrice').innerText = finalPrice;
