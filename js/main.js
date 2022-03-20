@@ -1,20 +1,20 @@
 const foodStore = [
     {
         name: 'Pizza',
-        price: '$10',
+        price: 500,
         img: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
         id: 1
     },
     {
         name: 'Burger',
-        price: '$5',
+        price: 400,
         img: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
         id: 2
 
     },
     {
         name: 'Fries',
-        price: '$3',
+        price: 300,
         img: 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60',
         id: 3
     }
@@ -35,7 +35,7 @@ const buildCard = () => {
                 creating delicious, authentic Italian food.
               </p>
               <div class="w-100 d-flex justify-content-between">
-                <p class="price">${item.price}</p>
+                <p class="price">Ksh.${item.price}.00</p>
                 <i class="fa fa-shopping-cart" type="button" 
                 data-bs-toggle="modal" data-bs-target="#addToCart" 
                 onclick="addToModal('${item.id}','${item.name}', '${item.img}')"></i>
@@ -59,22 +59,22 @@ buildCard();
 
 const addToCart = () => {
     console.log(currentId);
-    const food = foodStore.find(item => item.id === currentId);
+    const food = foodStore.find(item => item.id == currentId);
     // Get toppings, crust and size
     const toppings = document.querySelector('#toppings').value;
     const crust = document.querySelector('#crust').value;
     const size = document.querySelector('#size').value;
-
+    console.log(food);
     const extrasObject = {
         topping: toppings,
         crust: crust,
         size: size
-    }
+    };
     // Create new object
     const order = {
         ...food
-       
-    }
+        , ...extrasObject
+    };
     cart.push(order);
     console.log(cart);
 }
