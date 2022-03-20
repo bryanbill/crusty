@@ -5,7 +5,6 @@
 }
 html,
 body {
-  height: 100%;
   scroll-behavior: smooth;
 }
 
@@ -22,4 +21,7 @@ body {
 }
 .hero:hover {
   transition: all 0.5s ease-in-out;
+}
+.map {
+  height: 100%;
 }
