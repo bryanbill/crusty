@@ -29,7 +29,12 @@
           <a href="#">Products</a>
         </div>
         <div class="icons d-flex">
-          <i class="fas fa-shopping-cart"></i>
+          <i
+            class="fas fa-shopping-cart"
+            type="button"
+            data-bs-toggle="modal"
+            data-bs-target="#ordersModal"
+          ></i>
         </div>
       </nav>
     </header>
@@ -79,7 +84,12 @@
                 </p>
                 <div class="w-100 d-flex justify-content-between">
                   <p class="price">$10.00</p>
-                  <i class="fa fa-shopping-cart"></i>
+                  <i
+                    class="fa fa-shopping-cart"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#addToCart"
+                  ></i>
                 </div>
               </div>
             </div>
@@ -182,6 +192,101 @@
     </footer>
     <!-- End Footer Section -->
 
+    <!-- Modals -->
+    <!-- Checkout Modal -->
+    <div
+      class="modal fade"
+      id="ordersModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="ordersModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ordersModal">Orders</h5>
+            <button
+              type="button"
+              class="close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Checkout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Checkout Modal -->
+    <!-- Add to Cart Modal -->
+    <div
+      class="modal fade"
+      id="addToCart"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="addToCart"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addToCart">Add to Cart</h5>
+            <button
+              type="button"
+              class="close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Add to Cart -->
+            <div class="row">
+              <div class="col-md-6">
+                <img src="img/product-1.jpg" alt="" class="img-fluid" />
+              </div>
+              <div class="col-md-6">
+                <h3>Product Title</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo,
+                  quibusdam!
+                </p>
+                <p>
+                  <strong>Price: $20.00</strong>
+                </p>
+                <p>
+                  <strong>Quantity:</strong>
+                </p>
+                <input type="number" class="form-control" value="1" />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Checkout</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.min.js"
