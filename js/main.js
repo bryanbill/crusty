@@ -79,8 +79,10 @@ const addToCart = () => {
 }
 
 const populateOrders = () => {
+    let table = document.getElementById('table');
+    table.innerHTML = null;
     cart.forEach((order) => {
-        document.getElementById('table').innerHTML += `
+        table.innerHTML += `
         <tr>
                 <th>${order.id}</th>
                 <td>${order.name}</td>
@@ -102,11 +104,6 @@ const priceReducer = (overload) => {
 }
 
 const check = () => {
-    let isChecked = document.getElementById('delivery').value;
-    console.log(isChecked)
-    if (isChecked) {
-        document.getElementById('delivery').removeAttribute('checked');
-    }
-    document.getElementById('delivery').setAttribute('checked', true);
+    document.getElementById('delivery-form').classList.remove('visually-hidden');
 
 }
