@@ -20,7 +20,7 @@ const foodStore = [
     }
 ];
 let currentId;
-const cart = [];
+let cart = [];
 
 const buildCard = () => {
     foodStore.forEach(item => {
@@ -97,7 +97,7 @@ const populateOrders = () => {
               </tr>
         `
     });
-    finalPrice = prices.reduce((a, b) => a + b);
+    finalPrice = prices.length > 0 ? prices.reduce((a, b) => a + b) : 0;
     document.getElementById('totalPrice').innerText = finalPrice;
 }
 
@@ -110,7 +110,19 @@ const priceReducer = (overload) => {
 }
 
 const check = () => {
-    document.getElementById('delivery-form').classList.remove('visually-hidden');
-    finalPrice += 200;
-    document.getElementById('totalPrice').innerText = finalPrice;
+    if (finalPrice > 1 ) {
+        document.getElementById('delivery-form').classList.remove('visually-hidden');
+        finalPrice += 200;
+        document.getElementById('totalPrice').innerText = finalPrice;
+    }
+}
+
+const checkout = () => {
+    if (finalPrice < 1) {
+        alert("Empty Cart");
+        return;
+    }
+    cart = [];
+    finalPrice = 0;
+    alert("Order Successful")
 }
