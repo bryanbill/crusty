@@ -48,7 +48,6 @@ const buildCard = () => {
 }
 
 const addToModal = (id, name, img) => {
-    console.log(name, img, id);
     currentId = id;
     document.getElementById('title').innerText = name;
     document.getElementById('img').setAttribute('src', img)
@@ -58,7 +57,6 @@ const addToModal = (id, name, img) => {
 buildCard();
 
 const addToCart = () => {
-    console.log(currentId);
     const food = foodStore.find(item => item.id == currentId);
     // Get toppings, crust and size
     const toppings = document.querySelector('#toppings').value;
@@ -78,15 +76,37 @@ const addToCart = () => {
         total: total
     };
     cart.push(order);
-    console.log(cart);
 }
 
+const populateOrders = () => {
+    cart.forEach((order) => {
+        document.getElementById('table').innerHTML += `
+        <tr>
+                <th>${order.id}</th>
+                <td>${order.name}</td>
+                <td>${order.topping}</td>
+                <td>${order.crust}</td>
+                <td>${order.size}</td>
+                <td>${order.total}</td>
+              </tr>
+        `
+    })
+}
 
 const priceReducer = (overload) => {
     let prices = [];
     for (let price in overload) {
         prices.push(parseInt(overload[price]))
     }
-    console.log(prices);
     return prices.reduce((a, b) => a + b);
+}
+
+const check = () => {
+    let isChecked = document.getElementById('delivery').value;
+    console.log(isChecked)
+    if (isChecked) {
+        document.getElementById('delivery').removeAttribute('checked');
+    }
+    document.getElementById('delivery').setAttribute('checked', true);
+
 }
