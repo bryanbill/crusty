@@ -127,3 +127,5 @@ const checkout = () => {
     finalPrice = 0;
     alert("Order Successful")
 }
+
+document.getElementById('year').innerText = new Date(Date.now()).getFullYear();
