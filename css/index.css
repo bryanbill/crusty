@@ -25,3 +25,13 @@ body {
 .map {
   height: 100%;
 }
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+}
+.brand{
+    font-size: 2rem;
+    color: black;
+    font-weight: bold;
+}
