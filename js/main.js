@@ -70,12 +70,23 @@ const addToCart = () => {
         crust: crust,
         size: size
     };
+    const total = priceReducer(extrasObject)
     // Create new object
     const order = {
         ...food
-        , ...extrasObject
+        , ...extrasObject,
+        total: total
     };
     cart.push(order);
     console.log(cart);
 }
 
+
+const priceReducer = (overload) => {
+    let prices = [];
+    for (let price in overload) {
+        prices.push(parseInt(overload[price]))
+    }
+    console.log(prices);
+    return prices.reduce((a, b) => a + b);
+}
