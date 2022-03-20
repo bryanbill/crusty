@@ -78,10 +78,14 @@ const addToCart = () => {
     cart.push(order);
 }
 
+let finalPrice = 0;
+
 const populateOrders = () => {
     let table = document.getElementById('table');
     table.innerHTML = null;
+    let prices = [];
     cart.forEach((order) => {
+        prices.push(order.total);
         table.innerHTML += `
         <tr>
                 <th>${order.id}</th>
@@ -92,7 +96,9 @@ const populateOrders = () => {
                 <td>${order.total}</td>
               </tr>
         `
-    })
+    });
+    finalPrice = prices.reduce((a, b) => a + b);
+    document.getElementById('totalPrice').innerText = finalPrice;
 }
 
 const priceReducer = (overload) => {
@@ -105,5 +111,6 @@ const priceReducer = (overload) => {
 
 const check = () => {
     document.getElementById('delivery-form').classList.remove('visually-hidden');
-
+    finalPrice += 200;
+    document.getElementById('totalPrice').innerText = finalPrice;
 }
