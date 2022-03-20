@@ -18,5 +18,8 @@ body {
   font-size: 1.5rem;
 }
 .hero {
-  
+  background-color: white;
+}
+.hero:hover {
+  transition: all 0.5s ease-in-out;
 }
