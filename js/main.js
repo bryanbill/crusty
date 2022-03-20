@@ -1,3 +1,12 @@
+function FoodStore(name, pricem, img, id) {
+    this.name = name;
+    this.price = pricem;
+    this.img = img;
+    this.id = id;
+
+
+}
+
 const foodStore = [
     {
         name: 'Pizza',
@@ -24,22 +33,23 @@ let cart = [];
 
 const buildCard = () => {
     foodStore.forEach(item => {
+        let food = new FoodStore(item.name, item.price, item.img, item.id);
         document.getElementById('food-list').innerHTML += `
       <div class="col-md-4 animate">
           <div class="card">
            <div class="d-flex justify-content-center">
-           <img src="${item.img}" alt="" height="200" width="200" class="i" /></div>
+           <img src="${food.img}" alt="" height="200" width="200" class="i" /></div>
             <div class="card-body">
-              <h5 class="card-title">${item.name}</h5>
+              <h5 class="card-title">${food.name}</h5>
               <p class="card-text">
                 Crusty Palace is a family-owned business that specializes in
                 creating delicious, authentic Italian food.
               </p>
               <div class="w-100 d-flex justify-content-between">
-                <p class="price">Ksh.${item.price}.00</p>
+                <p class="price">Ksh.${food.price}.00</p>
                 <i class="fa fa-shopping-cart" type="button" 
                 data-bs-toggle="modal" data-bs-target="#addToCart" 
-                onclick="addToModal('${item.id}','${item.name}', '${item.img}')"></i>
+                onclick="addToModal('${food.id}','${food.name}', '${food.img}')"></i>
               </div>
             </div>
           </div>
