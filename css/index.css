@@ -8,6 +8,11 @@ body {
   scroll-behavior: smooth;
 }
 
+.bg-primary,
+.btn-primary {
+  background-color: rgb(209, 47, 47) !important;
+}
+
 .hero-text {
   display: flex;
   max-height: 100%;
@@ -30,8 +35,19 @@ a {
   color: black;
   font-size: 1.5rem;
 }
-.brand{
-    font-size: 2rem;
-    color: black;
-    font-weight: bold;
+.brand {
+  font-size: 2rem;
+  color: black;
+  font-weight: bold;
+}
+i {
+  font-size: 1.5rem;
+  color: rgb(209, 47, 47);
+}
+
+.animate {
+  transition: all ease-in 1s;
+}
+.animate:hover {
+  transform: scale(1.1);
 }
