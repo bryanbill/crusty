@@ -165,9 +165,13 @@
             </tbody>
 
           </table>
-          <label for="delivery">Delivery</label>
-          <input type="radio" id="delivery" onchange="check()">
-          <strong id="totalPrice"></strong>
+          <div class="d-flex justify-content-between">
+            <div class="form">
+              <label for="delivery">Delivery</label>
+              <input type="radio" id="delivery" onchange="check()">
+            </div>
+            <div class="price">Ksh. <strong id="totalPrice"></strong>.00</div>
+          </div>
 
           <div class="d-flex flex-column visually-hidden" id="delivery-form">
 
