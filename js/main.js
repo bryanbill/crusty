@@ -3,26 +3,24 @@ function FoodStore(name, pricem, img, id) {
     this.price = pricem;
     this.img = img;
     this.id = id;
-
-
 }
 
 const foodStore = [
     {
-        name: 'Pizza',
+        name: 'BBQ Pizza',
         price: 500,
         img: 'https://media.istockphoto.com/photos/delicious-vegetarian-pizza-on-white-picture-id1192094401?k=20&m=1192094401&s=612x612&w=0&h=jesvXuPyvqM36GQ5QEvJrL3QZjK6YKsziUUF3ZbW0gw=',
         id: 1
     },
     {
-        name: 'Burger',
+        name: 'Pepperoni Pizza',
         price: 400,
         img: 'https://media.istockphoto.com/photos/juicy-hamburger-on-white-background-picture-id1206323282?k=20&m=1206323282&s=612x612&w=0&h=yatlq6BHRCCvoTzFZLSwaJc0O8Quct_tRPWtH0dj9Fc=',
         id: 2
 
     },
     {
-        name: 'Fries',
+        name: 'Meat Pizza',
         price: 300,
         img: 'https://s7d1.scene7.com/is/image/mcdonalds/t-fries-basket:1-3-product-tile-desktop?wid=829&hei=515&dpr=off',
         id: 3
@@ -62,7 +60,6 @@ const addToModal = (id, name, img) => {
     currentId = id;
     document.getElementById('title').innerText = name;
     document.getElementById('img').setAttribute('src', img)
-
 }
 
 buildCard();
@@ -90,7 +87,7 @@ const addToCart = () => {
 }
 
 let finalPrice = 0;
-
+// ! work this out
 const populateOrders = () => {
     let table = document.getElementById('table');
     table.innerHTML = null;
